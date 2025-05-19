@@ -1,6 +1,12 @@
 ---
 import Navbar from "../components/Navbar.astro";
 
+interface Props {
+	title: string;
+	age?: number;
+	isActive?: boolean
+}
+
 const { title,  } = Astro.props;
 ---
 
