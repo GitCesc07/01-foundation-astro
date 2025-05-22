@@ -7,7 +7,14 @@ interface Props {
 	isActive?: boolean
 }
 
-const { title,  } = Astro.props;
+
+import { ClientRouter } from "astro:transitions";
+import "../styles/global.css"
+
+interface Props {
+	title: string;
+}
+const { title  } = Astro.props;
 ---
 
 <html lang="en">
@@ -17,11 +24,12 @@ const { title,  } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<ClientRouter />
 	</head>
 	<body>			
 
-		<Navbar />
-		<h1>{title}</h1>
+		<Navbar />		
         <slot />
 	</body>
 </html>
